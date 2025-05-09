@@ -86,8 +86,8 @@ async def start_handler(client, message):
     b6 = "Hi 👋 Welcome, Wanna intro...? \n\n✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more."
     b7 = "Join Channel"
     b8 = "Get Premium"
-    b9 = "https://t.me/team_spy_pro"
-    b10 = "https://t.me/kingofpatal"
+    b9 = "https://t.me/nothing_ixnee"
+    b10 = "https://t.me/src_ixneebot"
 
     # Fetch messages
     tm = await getattr(app, b3)(b1, b2)

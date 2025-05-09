@@ -82,7 +82,7 @@ async def start_handler(client, message):
     b1 = "save_restricted_content_bots"
     b2 = 796
     b3 = "get_messages"
-    b4 = "https://i.ibb.co/ZR3G7FVq/38fd10cdcdc2.jpg"
+    b4 = "reply_photo"
     b6 = "Hi 👋 Welcome, Wanna intro...? \n\n✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more."
     b7 = "Join Channel"
     b8 = "Get Premium"

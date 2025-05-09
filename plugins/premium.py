@@ -72,32 +72,37 @@ Subscription valid until: {formatted_expiry} (IST)"""
 attr1 = spy.b64encode("photo".encode()).decode()
 attr2 = spy.b64encode("file_id".encode()).decode()
 
-@app.on_message(filters.command(spy.b64decode(a5.encode()).decode()))
+@app.on_message(filters.command("start"))
 async def start_handler(client, message):
     subscription_status = await subscribe(client, message)
     if subscription_status == 1:
         return
 
-    b1 = spy.b64decode(a1).decode()
-    b2 = int(spy.b64decode(a2).decode())
-    b3 = spy.b64decode(a3).decode()
-    b4 = spy.b64decode(a4).decode()
-    b6 = spy.b64decode(a7).decode()
-    b7 = spy.b64decode(a8).decode()
-    b8 = spy.b64decode(a9).decode()
-    b9 = spy.b64decode(a10).decode()
-    b10 = spy.b64decode(a11).decode()
+    # Decoded values
+    b1 = "save_restricted_content_bots"
+    b2 = 796
+    b3 = "get_messages"
+    b4 = "reply_photo"
+    b6 = "Hi 👋 Welcome, Wanna intro...? \n\n✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more."
+    b7 = "Join Channel"
+    b8 = "Get Premium"
+    b9 = "https://t.me/team_spy_pro"
+    b10 = "https://t.me/kingofpatal"
 
+    # Fetch messages
     tm = await getattr(app, b3)(b1, b2)
 
-    pb = getattr(tm, spy.b64decode(attr1.encode()).decode())
-    fd = getattr(pb, spy.b64decode(attr2.encode()).decode())
+    # Extract photo and file_id
+    pb = getattr(tm, "photo")
+    fd = getattr(pb, "file_id")
 
+    # Keyboard with buttons
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton(b7, url=b9)],
         [InlineKeyboardButton(b8, url=b10)]
     ])
 
+    # Send the photo with caption and keyboard
     await getattr(message, b4)(
         fd,
         caption=b6,

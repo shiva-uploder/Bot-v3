@@ -74,37 +74,23 @@ attr2 = spy.b64encode("file_id".encode()).decode()
 
 @app.on_message(filters.command("start"))
 async def start_handler(client, message):
-    subscription_status = await subscribe(client, message)
-    if subscription_status == 1:
-        return
-
-    # Decoded values
-    b1 = "save_restricted_content_bots"
-    b2 = 796
-    b3 = "get_messages"
-    b4 = "reply_photo"
-    b6 = "Hi 👋 Welcome, Wanna intro...? \n\n✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more."
-    b7 = "Join Channel"
-    b8 = "Get Premium"
-    b9 = "https://t.me/nothing_ixnee"
-    b10 = "https://t.me/src_ixneebot"
-
-    # Fetch messages
-    tm = await getattr(app, b3)(b1, b2)
-
-    # Extract photo and file_id
-    pb = getattr(tm, "photo")
-    fd = getattr(pb, "file_id")
+    # Welcome message
+    welcome_text = (
+        "Hi 👋 Welcome, Wanna intro...? \n\n"
+        "✳️ I can save posts from channels or groups where forwarding is off."
+        " I can download videos/audio from YT, INSTA, ... social platforms\n"
+        "✳️ Simply send the post link of a public channel. For private channels, do /login."
+        " Send /help to know more."
+    )
 
     # Keyboard with buttons
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton(b7, url=b9)],
-        [InlineKeyboardButton(b8, url=b10)]
+        [InlineKeyboardButton("Join Channel", url="https://t.me/team_spy_pro")],
+        [InlineKeyboardButton("Get Premium", url="https://t.me/kingofpatal")]
     ])
 
+    # Photo URL
+    photo_url = "https://example.com/welcome_image.jpg"
+
     # Send the photo with caption and keyboard
-    await getattr(message, b4)(
-        fd,
-        caption=b6,
-        reply_markup=keyboard
-    )
+    await message.reply_photo(photo=photo_url, caption=welcome_text, reply_markup=keyboard)

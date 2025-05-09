@@ -85,12 +85,12 @@ async def start_handler(client, message):
 
     # Keyboard with buttons
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Join Channel", url="https://t.me/team_spy_pro")],
-        [InlineKeyboardButton("Get Premium", url="https://t.me/kingofpatal")]
+        [InlineKeyboardButton("Join Channel", url="https://t.me/nothing_ixnee")],
+        [InlineKeyboardButton("Get Premium", url="https://t.me/src_ixneebot")]
     ])
 
     # Photo URL
-    photo_url = "https://example.com/welcome_image.jpg"
+    photo_url = "https://i.ibb.co/ZR3G7FVq/38fd10cdcdc2.jpg"
 
     # Send the photo with caption and keyboard
     await message.reply_photo(photo=photo_url, caption=welcome_text, reply_markup=keyboard)

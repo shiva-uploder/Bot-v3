@@ -1,6 +1,6 @@
 ## Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/ankitbotmaker/Save-Restricted-Content-Bot-v3)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/shiva-uploder/Bot-v3)
 
 <h1 align="center">
   Save Restricted Content Bot v3
